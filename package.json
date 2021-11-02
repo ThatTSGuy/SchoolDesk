@@ -1,0 +1,23 @@
+{
+  "name": "schooldesk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheOnlyGoodOne/SchoolDesk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheOnlyGoodOne/SchoolDesk/issues"
+  },
+  "homepage": "https://github.com/TheOnlyGoodOne/SchoolDesk#readme",
+  "dependencies": {
+    "bootstrap-icons": "^1.7.0",
+    "gridstack": "^4.3.1"
+  }
+}
