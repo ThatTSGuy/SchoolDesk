@@ -1,34 +1,63 @@
-@import "utility/context-menu-styles.css";
+@import "utility/contextual.css";
 @import "https://cdn.jsdelivr.net/npm/gridstack@4.3.1/dist/gridstack.min.css";
 @import "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css";
 
 body {
     margin: 0;
+    background: linear-gradient(to right, #da4453, #89216b);
 }
 
-.sticky {
+.grid-stack-item-content {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 
+    0 2px 2px rgba(0, 0, 0, 0.12), 
+    0 4px 4px rgba(0, 0, 0, 0.12), 
+    0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+.widget {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-
-    background-color: #ffff99;
 }
 
-.sticky .header {
-    background-color: rgba(0, 0, 0, .05);
-    min-height: 40px;
+.header {
+    height: 30px;
 }
 
-.sticky .editable {
-    padding: 10px;
+.content {
     flex-grow: 1;
     overflow-y: auto;
 
     font-family: "Helvetica";
 }
 
-.sticky .editable:focus { outline: none; }
+.sticky {
+    background-color: #ffff99;
+}
+
+.sticky .header {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.sticky .content {
+    padding: 10px;
+}
+
+.sticky .content:focus { outline: none; }
+
+.youtube {
+
+}
+
+.youtube .header {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.youtube .content {
+    border: none;
+}
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, .1); }
