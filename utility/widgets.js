@@ -33,7 +33,7 @@ class Sticky {
 
 	blur() {
 		this.plainText = this.editable.innerText;
-		this.editable.innerHTML = marked(this.plainText);
+		this.editable.innerHTML = marked.parse(this.plainText);
 	}
 }
 
