@@ -14,46 +14,17 @@ const desktopGrid = GridStack.init({
 new Sticky();
 
 document.oncontextmenu = e => {
-    new Contextual({
-        width: '320px',
-        items: [
-            {
-                type: 'multi', items: [
-                    { label: 'Copy', onClick: () => { console.log('Copy!') } },
-                    { label: 'Cut', onClick: () => { console.log('Cut!') } },
-                    { label: 'Paste', onClick: () => { console.log('Paste!') } },
-                ]
-            },
-            { label: 'Button', onClick: () => { console.log('Item 1 clicked') }, shortcut: 'Ctrl+A' },
-            { type: 'seperator' },
-            {
-                type: 'submenu', label: 'Sub menu', items: [
-                    { label: 'Subitem 1', onClick: () => { } },
-                    { label: 'Subitem 2', onClick: () => { } },
-                    { label: 'Subitem 3', onClick: () => { } },
-                ]
-            },
-            {
-                type: 'hovermenu', label: 'Hover menu', items: [
-                    { label: 'Subitem 1', onClick: () => { } },
-                    { label: 'Subitem 2', onClick: () => { } },
-                    { label: 'Subitem 3', onClick: () => { } },
-                ]
-            },
-            { label: 'Disabled button', onClick: () => { }, shortcut: 'Ctrl+B', enabled: false },
-        ]
-    });
+    new ContextualMenu(e, [
+        { type: 'button', icon: 'scissors', text: 'Cut', hint: 'Ctrl+X', action: () => {} },
+        { type: 'button', icon: 'paperclip', text: 'Copy', hint: 'Ctrl+C', action: () => {} },
+        { type: 'button', icon: 'clipboard', text: 'Paste', hint: 'Ctrl+V', action: () => {} },
+        { type: 'seperator' },
+        { type: 'hover', text: 'New', items: [
+            { type: 'button', text: 'Folder', action: () => {} },
+            { type: 'button', text: 'File', action: () => {} },
+            { type: 'button', text: 'Link', action: () => {} },
+        ] },
+    ])
 
     e.preventDefault();
 }
-
-const menu = new ContextMenu('.grid-stack', [
-    {
-        name: 'New Sticky',
-        fn: e => {
-            const cell = desktopGrid.getCellFromPixel(window.mouse);
-            new Sticky(cell.x, cell.y);
-        },
-    },
-    {},
-]);
