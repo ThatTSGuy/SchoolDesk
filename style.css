@@ -5,6 +5,8 @@
 body {
     margin: 0;
     background: linear-gradient(to right, #da4453, #89216b);
+    width: 100vw;
+    height: 100vh;
 }
 
 .grid-stack-item-content {
